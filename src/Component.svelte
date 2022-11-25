@@ -3,7 +3,7 @@
   import DateInput from "./DateInput.svelte";
   import { localeFromDateFnsLocale } from './locale'
   import { parse, isValid } from 'date-fns';
-  import { enUS, enGB, zhCN, ru, fr, es, de, ptBR, it, ja, bn, da } from 'date-fns/locale';
+  import { enUS, enGB, zhCN, ru, fr, es, de, ptBR, it, ja, bn, da, sv } from 'date-fns/locale';
 
   export let field
   export let label
@@ -79,6 +79,11 @@
     else if (locale === "bn") {
       kasperLocale = localeFromDateFnsLocale(bn)
       dfLocale = bn
+      defaultFormat = "dd-MM-yyyy"
+    }
+    else if (locale === "sv") {
+      kasperLocale = localeFromDateFnsLocale(sv)
+      dfLocale = sv
       defaultFormat = "dd-MM-yyyy"
     }
     else if (locale === "da") {
